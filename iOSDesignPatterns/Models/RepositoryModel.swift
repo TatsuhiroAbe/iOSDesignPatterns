@@ -47,7 +47,6 @@ class RepositoryModel {
     
     func fetchRepositories(_ query: String) {
         let url = URL(string: BASE_URL + query)!
-        print(url)
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data, error == nil else {
                 print("error: \(error!.localizedDescription)")

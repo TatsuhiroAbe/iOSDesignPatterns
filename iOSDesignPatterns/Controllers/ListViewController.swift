@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class ListViewController: UIViewController {
 
@@ -20,14 +21,12 @@ class ListViewController: UIViewController {
 
         configureSearchBar()
         configureTableView()
-        
         repositoryModel.delegate = self
-        
-        repositoryModel.fetchRepositories("swift")
     }
 
     private func configureSearchBar() {
         searchBar.delegate = self
+        searchBar.placeholder = "Enter text"
     }
     
     private func configureTableView() {
@@ -40,12 +39,32 @@ class ListViewController: UIViewController {
 }
 
 extension ListViewController: UISearchBarDelegate {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = true
+    }
     
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        searchBar.showsCancelButton = false
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        searchBar.showsCancelButton = false
+        
+        if let searchText = searchBar.text, !searchText.isEmpty {
+            repositoryModel.fetchRepositories(searchText)
+        }
+    }
 }
 
 extension ListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let url = repositoryModel.repositories[indexPath.row].url
+        let safariViewController = SFSafariViewController(url: url)
+        present(safariViewController, animated: true, completion: nil)
     }
 }
 
