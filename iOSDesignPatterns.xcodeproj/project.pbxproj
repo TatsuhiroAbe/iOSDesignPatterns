@@ -9,16 +9,15 @@
 /* Begin PBXBuildFile section */
 		9ADAD74616E7554C3689F4E3 /* Pods_iOSDesignPatterns.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1AB0F68C458DE4C4089549 /* Pods_iOSDesignPatterns.framework */; };
 		FE7B4324238B6B3D00542094 /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7B4323238B6B3D00542094 /* RepositoryModel.swift */; };
-		FE7B4326238B6B4F00542094 /* RepositoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7B4325238B6B4F00542094 /* RepositoryPresenter.swift */; };
+		FE7B4326238B6B4F00542094 /* RepositoryViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7B4325238B6B4F00542094 /* RepositoryViewPresenter.swift */; };
 		FE7B4328238B6FFF00542094 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7B4327238B6FFF00542094 /* Result.swift */; };
 		FE7B432B238B717300542094 /* RepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7B432A238B717300542094 /* RepositoryViewController.swift */; };
 		FE7B432E238B71E300542094 /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7B432C238B71E300542094 /* RepositoryCell.swift */; };
 		FE7B432F238B71E300542094 /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE7B432D238B71E300542094 /* RepositoryCell.xib */; };
+		FE7B4331238B9F2500542094 /* RepositoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE7B4330238B9F2500542094 /* RepositoryViewController.xib */; };
 		FEE7BE0C2387ABDE0020A19C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE7BE0B2387ABDE0020A19C /* AppDelegate.swift */; };
 		FEE7BE0E2387ABDE0020A19C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE7BE0D2387ABDE0020A19C /* SceneDelegate.swift */; };
-		FEE7BE132387ABDE0020A19C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEE7BE112387ABDE0020A19C /* Main.storyboard */; };
 		FEE7BE152387ABE10020A19C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEE7BE142387ABE10020A19C /* Assets.xcassets */; };
-		FEE7BE182387ABE10020A19C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEE7BE162387ABE10020A19C /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,17 +25,16 @@
 		0F37D2809D488899B7E5974C /* Pods-iOSDesignPatterns.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSDesignPatterns.release.xcconfig"; path = "Target Support Files/Pods-iOSDesignPatterns/Pods-iOSDesignPatterns.release.xcconfig"; sourceTree = "<group>"; };
 		EC1AB0F68C458DE4C4089549 /* Pods_iOSDesignPatterns.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSDesignPatterns.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE7B4323238B6B3D00542094 /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
-		FE7B4325238B6B4F00542094 /* RepositoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryPresenter.swift; sourceTree = "<group>"; };
+		FE7B4325238B6B4F00542094 /* RepositoryViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewPresenter.swift; sourceTree = "<group>"; };
 		FE7B4327238B6FFF00542094 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		FE7B432A238B717300542094 /* RepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RepositoryViewController.swift; path = iOSDesignPatterns/RepositoryViewController.swift; sourceTree = SOURCE_ROOT; };
 		FE7B432C238B71E300542094 /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RepositoryCell.swift; path = iOSDesignPatterns/RepositoryCell.swift; sourceTree = SOURCE_ROOT; };
 		FE7B432D238B71E300542094 /* RepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RepositoryCell.xib; path = iOSDesignPatterns/RepositoryCell.xib; sourceTree = SOURCE_ROOT; };
+		FE7B4330238B9F2500542094 /* RepositoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RepositoryViewController.xib; path = iOSDesignPatterns/RepositoryViewController.xib; sourceTree = SOURCE_ROOT; };
 		FEE7BE082387ABDE0020A19C /* iOSDesignPatterns.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSDesignPatterns.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEE7BE0B2387ABDE0020A19C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEE7BE0D2387ABDE0020A19C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FEE7BE122387ABDE0020A19C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FEE7BE142387ABE10020A19C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FEE7BE172387ABE10020A19C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FEE7BE192387ABE10020A19C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				FE7B432A238B717300542094 /* RepositoryViewController.swift */,
+				FE7B4330238B9F2500542094 /* RepositoryViewController.xib */,
 				FE7B432C238B71E300542094 /* RepositoryCell.swift */,
 				FE7B432D238B71E300542094 /* RepositoryCell.xib */,
 			);
@@ -90,7 +89,7 @@
 		FE7B4322238B6ADE00542094 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				FE7B4325238B6B4F00542094 /* RepositoryPresenter.swift */,
+				FE7B4325238B6B4F00542094 /* RepositoryViewPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -130,9 +129,7 @@
 				FE7B4320238B6AD400542094 /* Model */,
 				FEE7BE0B2387ABDE0020A19C /* AppDelegate.swift */,
 				FEE7BE0D2387ABDE0020A19C /* SceneDelegate.swift */,
-				FEE7BE112387ABDE0020A19C /* Main.storyboard */,
 				FEE7BE142387ABE10020A19C /* Assets.xcassets */,
-				FEE7BE162387ABE10020A19C /* LaunchScreen.storyboard */,
 				FEE7BE192387ABE10020A19C /* Info.plist */,
 			);
 			path = iOSDesignPatterns;
@@ -197,9 +194,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEE7BE182387ABE10020A19C /* LaunchScreen.storyboard in Resources */,
+				FE7B4331238B9F2500542094 /* RepositoryViewController.xib in Resources */,
 				FEE7BE152387ABE10020A19C /* Assets.xcassets in Resources */,
-				FEE7BE132387ABDE0020A19C /* Main.storyboard in Resources */,
 				FE7B432F238B71E300542094 /* RepositoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,7 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE7B4326238B6B4F00542094 /* RepositoryPresenter.swift in Sources */,
+				FE7B4326238B6B4F00542094 /* RepositoryViewPresenter.swift in Sources */,
 				FE7B432E238B71E300542094 /* RepositoryCell.swift in Sources */,
 				FE7B4328238B6FFF00542094 /* Result.swift in Sources */,
 				FE7B4324238B6B3D00542094 /* RepositoryModel.swift in Sources */,
@@ -247,25 +243,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		FEE7BE112387ABDE0020A19C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FEE7BE122387ABDE0020A19C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		FEE7BE162387ABE10020A19C /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FEE7BE172387ABE10020A19C /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		FEE7BE1A2387ABE10020A19C /* Debug */ = {

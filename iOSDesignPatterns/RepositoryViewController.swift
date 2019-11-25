@@ -9,18 +9,36 @@
 import UIKit
 import SafariServices
 
-class RepositoryViewController: UIViewController {
+protocol RepositoryView: AnyObject {
+    func reloadData()
+    func showSafariView(_ url: URL)
+}
+
+class RepositoryViewController: UIViewController, RepositoryView {
+
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    lazy private var presenter = RepositoryPresenter(view: self, model: RepositoryModel())
+    private var presenter: RepositoryPresenter!
+    
+    init(presenter: RepositoryPresenter) {
+        self.presenter = presenter
+        super.init(nibName: String(describing: RepositoryViewController.self), bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.title = "Repository"
         configureSearchBar()
         configureTableView()
+        
+        presenter.view = self
     }
     
     private func configureSearchBar() {
@@ -33,6 +51,15 @@ class RepositoryViewController: UIViewController {
         tableView.dataSource = self
         
         tableView.register(UINib(nibName: "RepositoryCell", bundle: nil), forCellReuseIdentifier: "RepositoryCell")
+    }
+    
+    func reloadData() {
+        tableView.reloadData()
+    }
+    
+    func showSafariView(_ url: URL) {
+        let safariViewController = SFSafariViewController(url: url)
+        present(safariViewController, animated: true, completion: nil)
     }
 
 }
@@ -65,7 +92,7 @@ extension RepositoryViewController: UITableViewDelegate {
 
 extension RepositoryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.repositories.count
+        return presenter.numberOfRepositories
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -79,13 +106,3 @@ extension RepositoryViewController: UITableViewDataSource {
     }
 }
 
-extension RepositoryViewController: RepositoryPresenterOutput {
-    func updateRepositories(_ repositories: [Repository]) {
-        tableView.reloadData()
-    }
-    
-    func transitionToSafariView(_ url: URL) {
-        let safariViewController = SFSafariViewController(url: url)
-        present(safariViewController, animated: true, completion: nil)
-    }
-}

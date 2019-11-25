@@ -8,29 +8,30 @@
 
 import Foundation
 
-protocol RepositoryPresenterInput: class {
+protocol RepositoryPresenter: class {
+    var view: RepositoryView? { get set }
+    var numberOfRepositories: Int { get }
     func repository(_ row: Int) -> Repository?
     func didSelectRow(at indexPath: IndexPath)
     func didTapSearchButton(with searchText: String?)
 }
 
-protocol RepositoryPresenterOutput: AnyObject {
-    func updateRepositories(_ repositories: [Repository])
-    func transitionToSafariView(_ url: URL)
-}
-
-class RepositoryPresenter: RepositoryPresenterInput {
-
+class RepositoryViewPresenter: RepositoryPresenter {
+    
+    weak var view: RepositoryView?
+    
     private(set) var repositories: [Repository] = []
     
-    private weak var view: RepositoryPresenterOutput!
-    private var model: RepositoryModelInput
+    private var model: RepositoryModel!
     
-    init(view: RepositoryPresenterOutput, model: RepositoryModelInput) {
-        self.view = view
+    init(model: RepositoryModel) {
         self.model = model
     }
 
+    var numberOfRepositories: Int {
+        return repositories.count
+    }
+    
     func repository(_ row: Int) -> Repository? {
         guard row < repositories.count else { return nil }
         return repositories[row]
@@ -38,7 +39,7 @@ class RepositoryPresenter: RepositoryPresenterInput {
     
     func didSelectRow(at indexPath: IndexPath) {
         guard let repository = repository(indexPath.row) else { return }
-        view.transitionToSafariView(repository.url)
+        view?.showSafariView(repository.url)
     }
     
     func didTapSearchButton(with searchText: String?) {
@@ -49,7 +50,7 @@ class RepositoryPresenter: RepositoryPresenterInput {
                 self?.repositories = repositories
                 
                 DispatchQueue.main.async {
-                    self?.view.updateRepositories(repositories)
+                    self?.view?.reloadData()
                 }
             case let .failure(error):
                 print(error)

@@ -30,11 +30,8 @@ struct Repository: Decodable {
     }
 }
 
-protocol RepositoryModelInput: class {
-    func fetchRepositories(_ query: String, completion: @escaping (Result<[Repository], Error>) -> ())
-}
 
-class RepositoryModel: RepositoryModelInput {
+class RepositoryModel {
     
     let BASE_URL = "https://api.github.com/search/repositories?q="
     
