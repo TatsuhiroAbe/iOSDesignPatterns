@@ -20,16 +20,18 @@ struct Repository: Decodable {
     let name: String
     let description: String
     let url: URL
+    let language: String
     
     private enum CodingKeys: String, CodingKey {
         case name = "full_name"
         case description
         case url = "html_url"
+        case language
     }
 }
 
 
-protocol RepositoryModelDelegate: AnyObject {
+protocol RepositoryModelDelegate: class {
     func repositoryModel(_ repositoryModel: RepositoryModel, didChange repositories: [Repository])
 }
 
@@ -48,8 +50,9 @@ class RepositoryModel {
     func fetchRepositories(_ query: String) {
         let url = URL(string: BASE_URL + query)!
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data, error == nil else {
-                print("error: \(error!.localizedDescription)")
+            guard let data = data else { return }
+            if let error = error {
+                print("error: \(error.localizedDescription)")
                 return
             }
             

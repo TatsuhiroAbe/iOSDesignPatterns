@@ -34,7 +34,6 @@ class ListViewController: UIViewController {
         tableView.dataSource = self
         
         tableView.register(UINib(nibName: "RepositoryCell", bundle: nil), forCellReuseIdentifier: "RepositoryCell")
-        tableView.rowHeight = 100
     }
 }
 

@@ -11,6 +11,7 @@ import UIKit
 class RepositoryCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,5 +26,6 @@ class RepositoryCell: UITableViewCell {
     
     func configure(with repository: Repository) {
         nameLabel.text = repository.name
+        descriptionLabel.text = repository.description
     }
 }
