@@ -73,6 +73,7 @@ extension RepositoryViewController: UITableViewDataSource {
             if let repository = presenter.repository(indexPath.row) {
                 cell.configure(repository)
             }
+            return cell
         }
         return UITableViewCell()
     }
