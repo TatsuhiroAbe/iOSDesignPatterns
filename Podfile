@@ -6,5 +6,7 @@ target 'iOSDesignPatterns' do
   use_frameworks!
 
   # Pods for iOSDesignPatterns
+  pod 'RxSwift'
+  pod 'RxCocoa'
 
 end
