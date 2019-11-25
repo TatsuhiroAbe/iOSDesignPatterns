@@ -9,7 +9,7 @@
 import UIKit
 import SafariServices
 
-class ListViewController: UIViewController {
+class RepositoryViewController: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
@@ -37,7 +37,7 @@ class ListViewController: UIViewController {
     }
 }
 
-extension ListViewController: UISearchBarDelegate {
+extension RepositoryViewController: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.showsCancelButton = true
     }
@@ -57,7 +57,7 @@ extension ListViewController: UISearchBarDelegate {
     }
 }
 
-extension ListViewController: UITableViewDelegate {
+extension RepositoryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
@@ -67,7 +67,7 @@ extension ListViewController: UITableViewDelegate {
     }
 }
 
-extension ListViewController: UITableViewDataSource {
+extension RepositoryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return repositoryModel.repositories.count
     }
@@ -81,7 +81,7 @@ extension ListViewController: UITableViewDataSource {
     }
 }
 
-extension ListViewController: RepositoryModelDelegate {
+extension RepositoryViewController: RepositoryModelDelegate {
     func repositoryModel(_ repositoryModel: RepositoryModel, didChange repositories: [Repository]) {
         DispatchQueue.main.async {
             self.tableView.reloadData()

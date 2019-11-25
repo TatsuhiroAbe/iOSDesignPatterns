@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9ADAD74616E7554C3689F4E3 /* Pods_iOSDesignPatterns.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1AB0F68C458DE4C4089549 /* Pods_iOSDesignPatterns.framework */; };
-		FE2329D92387C09600302A2D /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2329D82387C09600302A2D /* ListViewController.swift */; };
+		FE2329D92387C09600302A2D /* RepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2329D82387C09600302A2D /* RepositoryViewController.swift */; };
 		FE2329DD2387C12000302A2D /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2329DB2387C12000302A2D /* RepositoryCell.swift */; };
 		FE2329DE2387C12000302A2D /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE2329DC2387C12000302A2D /* RepositoryCell.xib */; };
 		FEE7BE0C2387ABDE0020A19C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE7BE0B2387ABDE0020A19C /* AppDelegate.swift */; };
@@ -22,7 +22,7 @@
 		08CF9A085E44CFA5A7828E91 /* Pods-iOSDesignPatterns.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSDesignPatterns.debug.xcconfig"; path = "Target Support Files/Pods-iOSDesignPatterns/Pods-iOSDesignPatterns.debug.xcconfig"; sourceTree = "<group>"; };
 		0F37D2809D488899B7E5974C /* Pods-iOSDesignPatterns.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSDesignPatterns.release.xcconfig"; path = "Target Support Files/Pods-iOSDesignPatterns/Pods-iOSDesignPatterns.release.xcconfig"; sourceTree = "<group>"; };
 		EC1AB0F68C458DE4C4089549 /* Pods_iOSDesignPatterns.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSDesignPatterns.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FE2329D82387C09600302A2D /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		FE2329D82387C09600302A2D /* RepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewController.swift; sourceTree = "<group>"; };
 		FE2329DB2387C12000302A2D /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 		FE2329DC2387C12000302A2D /* RepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryCell.xib; sourceTree = "<group>"; };
 		FEE7BE082387ABDE0020A19C /* iOSDesignPatterns.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSDesignPatterns.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,7 +66,7 @@
 		FE7B431D238B69EA00542094 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				FE2329D82387C09600302A2D /* ListViewController.swift */,
+				FE2329D82387C09600302A2D /* RepositoryViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -221,7 +221,7 @@
 				FEE7BE232387B8F60020A19C /* RepositoryModel.swift in Sources */,
 				FEE7BE0C2387ABDE0020A19C /* AppDelegate.swift in Sources */,
 				FE2329DD2387C12000302A2D /* RepositoryCell.swift in Sources */,
-				FE2329D92387C09600302A2D /* ListViewController.swift in Sources */,
+				FE2329D92387C09600302A2D /* RepositoryViewController.swift in Sources */,
 				FEE7BE0E2387ABDE0020A19C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
