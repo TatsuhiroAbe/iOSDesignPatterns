@@ -27,10 +27,10 @@
 		FE7B4323238B6B3D00542094 /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
 		FE7B4325238B6B4F00542094 /* RepositoryViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewPresenter.swift; sourceTree = "<group>"; };
 		FE7B4327238B6FFF00542094 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		FE7B432A238B717300542094 /* RepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RepositoryViewController.swift; path = iOSDesignPatterns/RepositoryViewController.swift; sourceTree = SOURCE_ROOT; };
-		FE7B432C238B71E300542094 /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RepositoryCell.swift; path = iOSDesignPatterns/RepositoryCell.swift; sourceTree = SOURCE_ROOT; };
-		FE7B432D238B71E300542094 /* RepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RepositoryCell.xib; path = iOSDesignPatterns/RepositoryCell.xib; sourceTree = SOURCE_ROOT; };
-		FE7B4330238B9F2500542094 /* RepositoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RepositoryViewController.xib; path = iOSDesignPatterns/RepositoryViewController.xib; sourceTree = SOURCE_ROOT; };
+		FE7B432A238B717300542094 /* RepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RepositoryViewController.swift; path = iOSDesignPatterns/View/RepositoryViewController.swift; sourceTree = SOURCE_ROOT; };
+		FE7B432C238B71E300542094 /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RepositoryCell.swift; path = iOSDesignPatterns/View/RepositoryCell.swift; sourceTree = SOURCE_ROOT; };
+		FE7B432D238B71E300542094 /* RepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RepositoryCell.xib; path = iOSDesignPatterns/View/RepositoryCell.xib; sourceTree = SOURCE_ROOT; };
+		FE7B4330238B9F2500542094 /* RepositoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RepositoryViewController.xib; path = iOSDesignPatterns/View/RepositoryViewController.xib; sourceTree = SOURCE_ROOT; };
 		FEE7BE082387ABDE0020A19C /* iOSDesignPatterns.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSDesignPatterns.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEE7BE0B2387ABDE0020A19C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEE7BE0D2387ABDE0020A19C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,15 +67,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FE7B4320238B6AD400542094 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				FE7B4323238B6B3D00542094 /* RepositoryModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		FE7B4321238B6ADB00542094 /* View */ = {
+		FE654A88238D1413006CC988 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				FE7B432A238B717300542094 /* RepositoryViewController.swift */,
@@ -84,6 +76,14 @@
 				FE7B432D238B71E300542094 /* RepositoryCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		FE7B4320238B6AD400542094 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FE7B4323238B6B3D00542094 /* RepositoryModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		FE7B4322238B6ADE00542094 /* Presenter */ = {
@@ -123,9 +123,9 @@
 		FEE7BE0A2387ABDE0020A19C /* iOSDesignPatterns */ = {
 			isa = PBXGroup;
 			children = (
+				FE654A88238D1413006CC988 /* View */,
 				FE7B4329238B713600542094 /* Utility */,
 				FE7B4322238B6ADE00542094 /* Presenter */,
-				FE7B4321238B6ADB00542094 /* View */,
 				FE7B4320238B6AD400542094 /* Model */,
 				FEE7BE0B2387ABDE0020A19C /* AppDelegate.swift */,
 				FEE7BE0D2387ABDE0020A19C /* SceneDelegate.swift */,
