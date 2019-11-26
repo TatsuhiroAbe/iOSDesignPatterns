@@ -30,30 +30,37 @@ struct Repository: Decodable {
     }
 }
 
+protocol RepositoryModelProtocol {
+    func fetchRepositories(_ query: String, completion: @escaping (Result<[Repository], Error>) -> ())
+}
 
-class RepositoryModel {
+class RepositoryModel: RepositoryModelProtocol {
     
     let BASE_URL = "https://api.github.com/search/repositories?q="
     
     func fetchRepositories(_ query: String, completion: @escaping (Result<[Repository], Error>) -> ()) {
-//        let url = URL(string: BASE_URL + query)!
-//        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-//            guard let data = data else { return }
-//            if let error = error {
-//                print("error: \(error.localizedDescription)")
-//                return
-//            }
-//
-//            do {
-//                let repositoriesList = try JSONDecoder().decode(RepositoriesList.self, from: data)
-//                completion(.success(repositoriesList.repositories))
-//            } catch let err {
-//                completion(.failure(err))
-//            }
-//
-//        }
-//        task.resume()
-        
+        let url = URL(string: BASE_URL + query)!
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let data = data else { return }
+            if let error = error {
+                print("error: \(error.localizedDescription)")
+                return
+            }
+
+            do {
+                let repositoriesList = try JSONDecoder().decode(RepositoriesList.self, from: data)
+                completion(.success(repositoriesList.repositories))
+            } catch let err {
+                completion(.failure(err))
+            }
+
+        }
+        task.resume()
+    }
+}
+
+class MockRepositoryModel: RepositoryModelProtocol {
+    func fetchRepositories(_ query: String, completion: @escaping (Result<[Repository], Error>) -> ()) {
         var repositories: [Repository] = []
         for i in 0..<10 {
             let repository = Repository(

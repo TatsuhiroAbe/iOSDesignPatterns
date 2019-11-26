@@ -22,9 +22,9 @@ class RepositoryViewPresenter: RepositoryPresenter {
     
     private(set) var repositories: [Repository] = []
     
-    private var model: RepositoryModel!
+    private var model: RepositoryModelProtocol!
     
-    init(model: RepositoryModel) {
+    init(model: RepositoryModelProtocol = RepositoryModel()) {
         self.model = model
     }
 

@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let model = RepositoryModel()
+        let model = MockRepositoryModel()
         let presenter = RepositoryViewPresenter(model: model)
         let repositoryViewController = RepositoryViewController(presenter: presenter)
         let navigationController = UINavigationController(rootViewController: repositoryViewController)
