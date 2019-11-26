@@ -9,7 +9,9 @@
 import Foundation
 
 enum RepositoryAction {
+    case isEditing(Bool)
     case fetchRepositories([Repository])
     case clearRepositories
     case error(Error?)
+    case selectedRepository(Repository?)
 }

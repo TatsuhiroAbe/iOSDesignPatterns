@@ -18,9 +18,11 @@ final class RepositoryStore {
     
     static let shared = RepositoryStore()
     
+    private(set) var isEditing = false
     private(set) var repositories: [Repository] = []
     private(set) var query: String?
     private(set) var error: Error?
+    private(set) var selectedRepository: Repository?
     
     private lazy var dispatchToken: String = {
         return dispatcher.register(callback: { [weak self] action in
@@ -43,12 +45,16 @@ final class RepositoryStore {
     
     func onDispatch(_ action: RepositoryAction) {
         switch action {
+        case let .isEditing(isEditing):
+            self.isEditing = isEditing
         case let .fetchRepositories(repositories):
             self.repositories.append(contentsOf: repositories)
         case .clearRepositories:
             self.repositories.removeAll()
         case let .error(error):
             self.error = error
+        case let .selectedRepository(repository):
+            self.selectedRepository = repository
         }
         emitChange()
     }

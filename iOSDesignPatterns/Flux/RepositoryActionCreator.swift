@@ -30,8 +30,16 @@ final class RepositoryActionCreator {
         }
     }
     
+    func setIsEditing(_ isEditing: Bool) {
+        dispatcher.dispatch(.isEditing(isEditing))
+    }
+    
     func clearRepositories() {
         dispatcher.dispatch(.clearRepositories)
+    }
+    
+    func setSelectedRepository(_ repository: Repository) {
+        dispatcher.dispatch(.selectedRepository(repository))
     }
     
 }

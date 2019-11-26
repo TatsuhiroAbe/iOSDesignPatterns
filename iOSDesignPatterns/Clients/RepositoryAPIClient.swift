@@ -41,6 +41,9 @@ class RepositoryAPIClient: RepositoryAPIClinetProtocol {
 }
 
 class MockRepositoryAPIClinet: RepositoryAPIClinetProtocol {
+    
+    static let shared = MockRepositoryAPIClinet()
+    
     func fetchRepositores(_ query: String, completion: @escaping (Result<[Repository], Error>) -> ()) {
         var repositories: [Repository] = []
         for i in 0..<10 {

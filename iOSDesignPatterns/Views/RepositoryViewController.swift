@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class RepositoryViewController: UIViewController {
 
@@ -19,6 +20,8 @@ class RepositoryViewController: UIViewController {
     private lazy var reloadSubscription: Subscription = {
         return repositoryStore.addListener { [weak self] in
             self?.tableView.reloadData()
+            self?.refrectEditing()
+            self?.refrectSelectedRepository()
         }
     }()
     
@@ -40,19 +43,41 @@ class RepositoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.title = "Repository"
+        
         searchBar.delegate = self
         
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "RepositoryCell", bundle: nil), forCellReuseIdentifier: "RepositoryCell")
+        tableView.estimatedRowHeight = 64
+        tableView.rowHeight = UITableView.automaticDimension
 
         _ = reloadSubscription
+    }
+    
+    private func refrectEditing() {
+        if repositoryStore.isEditing {
+            self.searchBar.showsCancelButton = true
+        } else {
+            self.searchBar.resignFirstResponder()
+            self.searchBar.showsCancelButton = false
+        }
+    }
+    
+    private func refrectSelectedRepository() {
+        if let repository = repositoryStore.selectedRepository {
+            let url = repository.url
+            let safariViewController = SFSafariViewController(url: url)
+            present(safariViewController, animated: true, completion: nil)
+        }
     }
 }
 
 extension RepositoryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        actionCreator.setSelectedRepository(repositoryStore.repositories[indexPath.row])
     }
 }
 
@@ -73,10 +98,21 @@ extension RepositoryViewController: UITableViewDataSource {
 }
 
 extension RepositoryViewController: UISearchBarDelegate {
+    
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        actionCreator.setIsEditing(true)
+        return true
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        actionCreator.setIsEditing(false)
+    }
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let text = searchBar.text, !text.isEmpty {
             actionCreator.clearRepositories()
             actionCreator.fetchRepositories(text)
+            actionCreator.setIsEditing(false)
         }
     }
 }
