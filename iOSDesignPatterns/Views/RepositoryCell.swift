@@ -11,6 +11,9 @@ import UIKit
 class RepositoryCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var languageLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,5 +27,7 @@ class RepositoryCell: UITableViewCell {
     
     func configure(_ repository: Repository) {
         nameLabel.text = repository.name
+        languageLabel.text = repository.language
+        descriptionLabel.text = repository.description
     }
 }

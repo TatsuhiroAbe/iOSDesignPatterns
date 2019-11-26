@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 struct RepositoriesList: Decodable {
     let repositories: [Repository]
@@ -38,7 +39,7 @@ protocol RepositoryModelProtocol {
 class RepositoryModel: RepositoryModelProtocol {
     func fetchRepositories(_ query: String) -> Observable<[Repository]> {
         return Observable.create { observer in
-            RepositoryClient.shared.fetchRepositories(query) { result in
+            RepositoryAPIClient.shared.fetchRepositories(query) { result in
                 switch result {
                 case let . success(repositories):
                     observer.onNext(repositories)

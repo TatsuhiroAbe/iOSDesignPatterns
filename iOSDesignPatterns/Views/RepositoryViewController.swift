@@ -27,6 +27,8 @@ class RepositoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.estimatedRowHeight = 64
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.register(UINib(nibName: "RepositoryCell", bundle: nil), forCellReuseIdentifier: "RepositoryCell")
         
         

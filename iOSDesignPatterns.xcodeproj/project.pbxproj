@@ -17,7 +17,7 @@
 		FEF4C142238BADE10043D88F /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF4C141238BADE10043D88F /* RepositoryModel.swift */; };
 		FEF4C145238BAF020043D88F /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF4C143238BAF020043D88F /* RepositoryCell.swift */; };
 		FEF4C146238BAF020043D88F /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEF4C144238BAF020043D88F /* RepositoryCell.xib */; };
-		FEF4C148238BB8BB0043D88F /* RepositoryClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF4C147238BB8BB0043D88F /* RepositoryClient.swift */; };
+		FEF4C148238BB8BB0043D88F /* RepositoryAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF4C147238BB8BB0043D88F /* RepositoryAPIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +35,7 @@
 		FEF4C141238BADE10043D88F /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
 		FEF4C143238BAF020043D88F /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 		FEF4C144238BAF020043D88F /* RepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryCell.xib; sourceTree = "<group>"; };
-		FEF4C147238BB8BB0043D88F /* RepositoryClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryClient.swift; sourceTree = "<group>"; };
+		FEF4C147238BB8BB0043D88F /* RepositoryAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryAPIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +67,41 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FE654A84238CFEC0006CC988 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FEF4C13B238BAC820043D88F /* RepositoryViewController.swift */,
+				FEF4C13C238BAC820043D88F /* RepositoryViewController.xib */,
+				FEF4C143238BAF020043D88F /* RepositoryCell.swift */,
+				FEF4C144238BAF020043D88F /* RepositoryCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FE654A85238CFED1006CC988 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FEF4C141238BADE10043D88F /* RepositoryModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FE654A86238CFED5006CC988 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FEF4C13F238BAD7C0043D88F /* RepositoryViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FE654A87238CFEF6006CC988 /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				FEF4C147238BB8BB0043D88F /* RepositoryAPIClient.swift */,
+			);
+			path = Clients;
+			sourceTree = "<group>";
+		};
 		FEE7BDFF2387ABDE0020A19C = {
 			isa = PBXGroup;
 			children = (
@@ -88,17 +123,14 @@
 		FEE7BE0A2387ABDE0020A19C /* iOSDesignPatterns */ = {
 			isa = PBXGroup;
 			children = (
+				FE654A87238CFEF6006CC988 /* Clients */,
+				FE654A86238CFED5006CC988 /* ViewModels */,
+				FE654A85238CFED1006CC988 /* Models */,
+				FE654A84238CFEC0006CC988 /* Views */,
 				FEE7BE0B2387ABDE0020A19C /* AppDelegate.swift */,
 				FEE7BE0D2387ABDE0020A19C /* SceneDelegate.swift */,
 				FEE7BE142387ABE10020A19C /* Assets.xcassets */,
 				FEE7BE192387ABE10020A19C /* Info.plist */,
-				FEF4C13B238BAC820043D88F /* RepositoryViewController.swift */,
-				FEF4C13C238BAC820043D88F /* RepositoryViewController.xib */,
-				FEF4C13F238BAD7C0043D88F /* RepositoryViewModel.swift */,
-				FEF4C141238BADE10043D88F /* RepositoryModel.swift */,
-				FEF4C143238BAF020043D88F /* RepositoryCell.swift */,
-				FEF4C144238BAF020043D88F /* RepositoryCell.xib */,
-				FEF4C147238BB8BB0043D88F /* RepositoryClient.swift */,
 			);
 			path = iOSDesignPatterns;
 			sourceTree = "<group>";
@@ -222,7 +254,7 @@
 				FEF4C142238BADE10043D88F /* RepositoryModel.swift in Sources */,
 				FEE7BE0C2387ABDE0020A19C /* AppDelegate.swift in Sources */,
 				FEF4C145238BAF020043D88F /* RepositoryCell.swift in Sources */,
-				FEF4C148238BB8BB0043D88F /* RepositoryClient.swift in Sources */,
+				FEF4C148238BB8BB0043D88F /* RepositoryAPIClient.swift in Sources */,
 				FEF4C13D238BAC820043D88F /* RepositoryViewController.swift in Sources */,
 				FEE7BE0E2387ABDE0020A19C /* SceneDelegate.swift in Sources */,
 			);
