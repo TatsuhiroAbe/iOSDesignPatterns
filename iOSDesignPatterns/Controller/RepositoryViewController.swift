@@ -1,8 +1,8 @@
 //
-//  ListViewController.swift
+//  RepositoryViewController.swift
 //  iOSDesignPatterns
 //
-//  Created by 阿部竜大 on 2019/11/22.
+//  Created by 阿部竜大 on 2019/11/26.
 //  Copyright © 2019 阿部竜大. All rights reserved.
 //
 
@@ -14,11 +14,22 @@ class RepositoryViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    let repositoryModel = RepositoryModel()
+    let repositoryModel: RepositoryModel!
+    
+    init(repositoryModel: RepositoryModel = RepositoryModel()) {
+        self.repositoryModel = repositoryModel
+        super.init(nibName: String(describing: RepositoryViewController.self), bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.title = "Repository"
+        
         configureSearchBar()
         configureTableView()
         repositoryModel.delegate = self

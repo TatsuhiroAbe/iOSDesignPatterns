@@ -48,35 +48,24 @@ class RepositoryModel {
     }
     
     func fetchRepositories(_ query: String) {
-//        let url = URL(string: BASE_URL + query)!
-//        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-//            guard let data = data else { return }
-//            if let error = error {
-//                print("error: \(error.localizedDescription)")
-//                return
-//            }
-//
-//            do {
-//                let repositoriesList = try JSONDecoder().decode(RepositoriesList.self, from: data)
-//                self.repositories = repositoriesList.repositories
-//            } catch let err {
-//                print("decode error: \(err.localizedDescription)")
-//                return
-//            }
-//
-//        }
-//        task.resume()
-        
-        var repositories: [Repository] = []
-        for i in 0..<10 {
-            let repository = Repository(
-                name: "repo_\(i)",
-                description: "description_\(i)",
-                url: URL(string: "https://github.com/TatsuhiroAbe")!,
-                language: "swift"
-            )
-            repositories.append(repository)
+        let url = URL(string: BASE_URL + query)!
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let data = data else { return }
+            if let error = error {
+                print("error: \(error.localizedDescription)")
+                return
+            }
+
+            do {
+                let repositoriesList = try JSONDecoder().decode(RepositoriesList.self, from: data)
+                self.repositories = repositoriesList.repositories
+            } catch let err {
+                print("decode error: \(err.localizedDescription)")
+                return
+            }
+
         }
-        self.repositories = repositories
+        task.resume()
     }
 }
+

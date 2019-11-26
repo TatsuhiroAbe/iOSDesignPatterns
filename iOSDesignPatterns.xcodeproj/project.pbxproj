@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		9ADAD74616E7554C3689F4E3 /* Pods_iOSDesignPatterns.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1AB0F68C458DE4C4089549 /* Pods_iOSDesignPatterns.framework */; };
-		FE2329D92387C09600302A2D /* RepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2329D82387C09600302A2D /* RepositoryViewController.swift */; };
 		FE2329DD2387C12000302A2D /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2329DB2387C12000302A2D /* RepositoryCell.swift */; };
 		FE2329DE2387C12000302A2D /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE2329DC2387C12000302A2D /* RepositoryCell.xib */; };
+		FE654A82238CF32A006CC988 /* RepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE654A80238CF32A006CC988 /* RepositoryViewController.swift */; };
+		FE654A83238CF32A006CC988 /* RepositoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE654A81238CF32A006CC988 /* RepositoryViewController.xib */; };
 		FEE7BE0C2387ABDE0020A19C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE7BE0B2387ABDE0020A19C /* AppDelegate.swift */; };
 		FEE7BE0E2387ABDE0020A19C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE7BE0D2387ABDE0020A19C /* SceneDelegate.swift */; };
-		FEE7BE132387ABDE0020A19C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEE7BE112387ABDE0020A19C /* Main.storyboard */; };
 		FEE7BE152387ABE10020A19C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEE7BE142387ABE10020A19C /* Assets.xcassets */; };
 		FEE7BE232387B8F60020A19C /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE7BE222387B8F60020A19C /* RepositoryModel.swift */; };
 /* End PBXBuildFile section */
@@ -22,13 +22,13 @@
 		08CF9A085E44CFA5A7828E91 /* Pods-iOSDesignPatterns.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSDesignPatterns.debug.xcconfig"; path = "Target Support Files/Pods-iOSDesignPatterns/Pods-iOSDesignPatterns.debug.xcconfig"; sourceTree = "<group>"; };
 		0F37D2809D488899B7E5974C /* Pods-iOSDesignPatterns.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSDesignPatterns.release.xcconfig"; path = "Target Support Files/Pods-iOSDesignPatterns/Pods-iOSDesignPatterns.release.xcconfig"; sourceTree = "<group>"; };
 		EC1AB0F68C458DE4C4089549 /* Pods_iOSDesignPatterns.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSDesignPatterns.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FE2329D82387C09600302A2D /* RepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewController.swift; sourceTree = "<group>"; };
 		FE2329DB2387C12000302A2D /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 		FE2329DC2387C12000302A2D /* RepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryCell.xib; sourceTree = "<group>"; };
+		FE654A80238CF32A006CC988 /* RepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewController.swift; sourceTree = "<group>"; };
+		FE654A81238CF32A006CC988 /* RepositoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryViewController.xib; sourceTree = "<group>"; };
 		FEE7BE082387ABDE0020A19C /* iOSDesignPatterns.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSDesignPatterns.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEE7BE0B2387ABDE0020A19C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEE7BE0D2387ABDE0020A19C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FEE7BE122387ABDE0020A19C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FEE7BE142387ABE10020A19C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEE7BE192387ABE10020A19C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEE7BE222387B8F60020A19C /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
@@ -66,7 +66,8 @@
 		FE7B431D238B69EA00542094 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				FE2329D82387C09600302A2D /* RepositoryViewController.swift */,
+				FE654A80238CF32A006CC988 /* RepositoryViewController.swift */,
+				FE654A81238CF32A006CC988 /* RepositoryViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -114,7 +115,6 @@
 				FE7B431D238B69EA00542094 /* Controller */,
 				FEE7BE0B2387ABDE0020A19C /* AppDelegate.swift */,
 				FEE7BE0D2387ABDE0020A19C /* SceneDelegate.swift */,
-				FEE7BE112387ABDE0020A19C /* Main.storyboard */,
 				FEE7BE142387ABE10020A19C /* Assets.xcassets */,
 				FEE7BE192387ABE10020A19C /* Info.plist */,
 			);
@@ -181,8 +181,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE2329DE2387C12000302A2D /* RepositoryCell.xib in Resources */,
+				FE654A83238CF32A006CC988 /* RepositoryViewController.xib in Resources */,
 				FEE7BE152387ABE10020A19C /* Assets.xcassets in Resources */,
-				FEE7BE132387ABDE0020A19C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,23 +221,12 @@
 				FEE7BE232387B8F60020A19C /* RepositoryModel.swift in Sources */,
 				FEE7BE0C2387ABDE0020A19C /* AppDelegate.swift in Sources */,
 				FE2329DD2387C12000302A2D /* RepositoryCell.swift in Sources */,
-				FE2329D92387C09600302A2D /* RepositoryViewController.swift in Sources */,
 				FEE7BE0E2387ABDE0020A19C /* SceneDelegate.swift in Sources */,
+				FE654A82238CF32A006CC988 /* RepositoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		FEE7BE112387ABDE0020A19C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FEE7BE122387ABDE0020A19C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		FEE7BE1A2387ABE10020A19C /* Debug */ = {
