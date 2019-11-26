@@ -29,19 +29,35 @@ class RepositoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "Repository"
+        
+        searchBar.delegate = self
         configureTableView()
         
         let viewModel = RepositoryViewModel(
             searchBarText: searchBar.rx.text.asObservable(),
             searchButtonClicked: searchBar.rx.searchButtonClicked.asObservable(),
             itemSelected: tableView.rx.itemSelected.asObservable(),
-            model: RepositoryModel(client: MockRepositoryAPIClinet())
+            model: RepositoryModel(client: MockRepositoryAPIClinet.shared)
         )
         
         viewModel.repositories
             .bind(to: tableView.rx.items(cellIdentifier: "RepositoryCell")) { (_, repository, cell: RepositoryCell) in
                 cell.configure(repository)
             }
+            .disposed(by: disposeBag)
+        
+        viewModel.deselectRow
+            .bind(to: Binder(self) { me, indexPath in
+                me.tableView.deselectRow(at: indexPath, animated: true)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.openURL
+            .bind(to: Binder(self) { me, url in
+                let safariViewController = SFSafariViewController(url: url)
+                me.present(safariViewController, animated: true, completion: nil)
+            })
             .disposed(by: disposeBag)
     }
     
@@ -53,4 +69,22 @@ class RepositoryViewController: UIViewController {
     
 }
 
-
+extension RepositoryViewController: UISearchBarDelegate {
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        searchBar.showsCancelButton = true
+        return true
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+        searchBar.resignFirstResponder()
+    }
+}

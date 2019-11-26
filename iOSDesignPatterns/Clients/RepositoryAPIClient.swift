@@ -18,7 +18,9 @@ protocol RepositoryAPIClientProtocol {
 }
 
 class RepositoryAPIClient: RepositoryAPIClientProtocol {
-
+    
+    static let shared = RepositoryAPIClient()
+    
     let BASE_URL = "https://api.github.com/search/repositories?q="
     
     func fetchRepositories(_ query: String, completion: @escaping (Result<[Repository], Error>) -> Void) {
@@ -42,6 +44,8 @@ class RepositoryAPIClient: RepositoryAPIClientProtocol {
 }
 
 class MockRepositoryAPIClinet: RepositoryAPIClientProtocol {
+    
+    static let shared = MockRepositoryAPIClinet()
     
     func fetchRepositories(_ query: String, completion: @escaping (Result<[Repository], Error>) -> Void) {
         var repositories: [Repository] = []

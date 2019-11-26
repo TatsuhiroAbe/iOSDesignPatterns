@@ -17,6 +17,8 @@ class RepositoryViewModel {
     
     let repositories: Observable<[Repository]>
     let error: Observable<Error>
+    let deselectRow: Observable<IndexPath>
+    let openURL: Observable<URL>
     
     init(searchBarText: Observable<String?>,
          searchButtonClicked: Observable<Void>,
@@ -40,6 +42,17 @@ class RepositoryViewModel {
         
         error = searchResult
             .flatMap { $0.error.map(Observable.just) ?? .empty() }
+        
+        deselectRow = itemSelected.map { $0 }
+        
+        openURL = itemSelected
+            .withLatestFrom(repositories) { ($0, $1) }
+            .flatMap { indexPath, repositories -> Observable<URL> in
+                guard indexPath.row < repositories.count else {
+                    return .empty()
+                }
+                return .just(repositories[indexPath.row].url)
+            }
     }
     
 }
