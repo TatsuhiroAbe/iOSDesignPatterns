@@ -32,14 +32,17 @@ struct Repository: Decodable {
     }
 }
 
-protocol RepositoryModelProtocol {
-    func fetchRepositories(_ query: String) -> Observable<[Repository]>
-}
-
-class RepositoryModel: RepositoryModelProtocol {
+class RepositoryModel {
+    
+    private let client: RepositoryAPIClientProtocol
+    
+    init(client: RepositoryAPIClientProtocol = RepositoryAPIClient()) {
+        self.client = client
+    }
+    
     func fetchRepositories(_ query: String) -> Observable<[Repository]> {
         return Observable.create { observer in
-            RepositoryAPIClient.shared.fetchRepositories(query) { result in
+            self.client.fetchRepositories(query) { result in
                 switch result {
                 case let . success(repositories):
                     observer.onNext(repositories)
