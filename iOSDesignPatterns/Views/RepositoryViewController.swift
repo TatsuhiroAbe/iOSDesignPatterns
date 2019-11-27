@@ -48,15 +48,15 @@ class RepositoryViewController: UIViewController {
             .disposed(by: disposeBag)
         
         viewModel.deselectRow
-            .bind(to: Binder(self) { me, indexPath in
-                me.tableView.deselectRow(at: indexPath, animated: true)
+            .bind(to: Binder(self) { viewController, indexPath in
+                viewController.tableView.deselectRow(at: indexPath, animated: true)
             })
             .disposed(by: disposeBag)
         
         viewModel.openURL
-            .bind(to: Binder(self) { me, url in
+            .bind(to: Binder(self) { viewController, url in
                 let safariViewController = SFSafariViewController(url: url)
-                me.present(safariViewController, animated: true, completion: nil)
+                viewController.present(safariViewController, animated: true, completion: nil)
             })
             .disposed(by: disposeBag)
     }
